@@ -1,6 +1,11 @@
 from rest_framework import serializers
 from apps.kinopark.models import *
-from apps.kinopark.models import Movie_details
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = "__all__"
 
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -36,12 +41,3 @@ class UserSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
-
-
-class MovieDetailsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Movie_details
-        fields = '__all__'
-
-
-

@@ -39,3 +39,7 @@ INSTALL JWT
 
 pip3 install PyJWT
 
+
+
+pip install reportlab
+
