@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django import forms
 
 
 class Movie(models.Model):
@@ -28,3 +28,9 @@ class Order(models.Model):
     time = models.DateTimeField(auto_now=True)
     movie = models.ForeignKey('Movie', on_delete=models.PROTECT)
     user = models.ForeignKey('User', on_delete=models.PROTECT)
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    content = forms.CharField(widget=forms.Textarea)

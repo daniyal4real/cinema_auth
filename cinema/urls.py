@@ -20,5 +20,5 @@ import apps.kinopark.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.kinopark.urls'))
+    path('', include('apps.kinopark.urls')),
 ]

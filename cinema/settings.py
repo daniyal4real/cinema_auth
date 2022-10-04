@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import logging
+
 logger = logging.getLogger(__name__)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'contact'
 ]
 
 MIDDLEWARE = [
@@ -165,5 +167,15 @@ AUTH_USER_MODEL = 'kinopark.User'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+    'http://localhost:4200',
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'd.ganiuly@bk.ru'
+EMAIL_HOST_PASSWORD = 'VG5JAwh6ze3dxMuLxUTj'
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

@@ -1,5 +1,6 @@
 from django.urls import re_path, path
 from apps.kinopark import views
+from .views import *
 from .views import RegisterView, LoginView, UserView, LogoutView
 
 app_name = 'kinopark'
@@ -14,5 +15,6 @@ urlpatterns = [
     path('api/logout', LogoutView.as_view()),
     path('api/get_login', views.get_login),
     re_path(r'api/order/(?P<pk>[0-9]+)', views.order),
-    re_path(r'api/order', views.create_order)
+    re_path(r'api/order', views.create_order),
+    path('', views.contact)
 ]
